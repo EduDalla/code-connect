@@ -1,0 +1,19 @@
+{
+  "name": "code-connect",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "pnpm@11.8.0",
+  "scripts": {
+    "dev": "./pnpm -r --parallel --stream dev",
+    "build": "./pnpm -r build",
+    "web:dev": "./pnpm -C apps/web dev",
+    "web:build": "./pnpm -C apps/web build",
+    "web:lint": "./pnpm -C apps/web lint",
+    "web:preview": "./pnpm -C apps/web preview",
+    "api:dev": "./pnpm -C apps/api start:dev",
+    "api:build": "./pnpm -C apps/api build",
+    "api:lint": "./pnpm -C apps/api lint",
+    "api:test": "./pnpm -C apps/api test",
+    "api:test:e2e": "./pnpm -C apps/api test:e2e"
+  }
+}
