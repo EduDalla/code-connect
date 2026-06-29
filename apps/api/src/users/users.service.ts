@@ -32,6 +32,12 @@ export class UsersService {
     return this.toPublicUser(user);
   }
 
+  findById(id: string): PublicUser | undefined {
+    const user = this.users.get(id);
+
+    return user ? this.toPublicUser(user) : undefined;
+  }
+
   findStoredByEmail(email: string): StoredUser | undefined {
     const userId = this.userIdsByEmail.get(this.normalizeEmail(email));
 
