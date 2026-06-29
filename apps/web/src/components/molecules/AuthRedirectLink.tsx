@@ -14,10 +14,10 @@ export function AuthRedirectLink({
   icon,
 }: AuthRedirectLinkProps) {
   return (
-    <div className="flex flex-col items-center gap-4 text-center">
-      <p className="text-sm text-white/85">{prompt}</p>
+    <div className="flex flex-col items-start gap-1 text-left sm:flex-row sm:items-center sm:gap-2">
+      <p className="text-[1.125rem] leading-[1.5] text-[#e1e1e1]">{prompt}</p>
       <a
-        className="inline-flex items-center gap-3 text-[1.05rem] font-medium text-[#7fff84] transition hover:text-[#9bff9f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7fff84]"
+        className="inline-flex items-center gap-3 text-[1.125rem] font-normal leading-[1.5] text-[#81fe88] transition hover:text-[#9bff9f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#81fe88]"
         href={href}
       >
         <span>{action}</span>

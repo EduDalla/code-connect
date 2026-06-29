@@ -9,6 +9,7 @@ const loginBanner = {
   tablet: '/banner-login-tablet.png',
   mobile: '/banner-login-mobile.png',
   alt: 'Banner principal da tela de login do Code Connect',
+  className: 'lg:h-[636px]',
 }
 
 export function LoginPage() {

@@ -16,13 +16,13 @@ export function Checkbox({
   return (
     <label
       className={classNames(
-        'inline-flex items-center gap-2 text-sm text-white/55',
+        'inline-flex items-center gap-2 text-[0.9375rem] leading-[1.5] text-[#888]',
         className,
       )}
       htmlFor={fieldId}
     >
       <input
-        className="h-5 w-5 rounded-[4px] border border-white/60 bg-transparent text-[#7fff84] accent-[#7fff84] outline-none transition focus-visible:ring-2 focus-visible:ring-[#7fff84]/30"
+        className="h-6 w-6 rounded-[4px] border-2 border-[#888] bg-transparent text-[#81fe88] accent-[#81fe88] outline-none transition focus-visible:ring-2 focus-visible:ring-[#81fe88]/30"
         id={fieldId}
         type="checkbox"
         {...props}

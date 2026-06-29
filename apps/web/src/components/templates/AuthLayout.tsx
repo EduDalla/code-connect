@@ -16,13 +16,13 @@ export function AuthLayout({ children, className }: AuthLayoutProps) {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-[-3rem] top-[-4rem] h-[28rem] w-[17rem] rounded-[7rem] border-[18px] border-[#0d1a21]/70 opacity-70 sm:left-[5%] sm:top-[-5rem] sm:h-[37rem] sm:w-[20rem]"
+        className="pointer-events-none absolute left-0 top-0 h-[91px] w-[76px] rounded-[2rem] border-[10px] border-[#0d1a21]/70 opacity-70 sm:left-[5%] sm:top-[-5rem] sm:h-[37rem] sm:w-[20rem] sm:rounded-[7rem] sm:border-[18px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-[-2rem] bottom-[-3rem] h-[26rem] w-[16rem] rounded-[7rem] border-[18px] border-[#0d1a21]/70 opacity-70 sm:right-[4%] sm:bottom-[-6rem] sm:h-[39rem] sm:w-[20rem]"
+        className="pointer-events-none absolute bottom-0 right-0 h-[92px] w-[77px] rounded-[2rem] border-[10px] border-[#0d1a21]/70 opacity-70 sm:right-[4%] sm:bottom-[-6rem] sm:h-[39rem] sm:w-[20rem] sm:rounded-[7rem] sm:border-[18px]"
       />
-      <div className="relative mx-auto flex min-h-screen w-full max-w-[1440px] items-center justify-center px-4 py-6 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-screen w-full max-w-[1440px] items-start justify-center px-4 py-14 sm:items-center sm:px-6 lg:px-8">
         {children}
       </div>
     </main>

@@ -27,3 +27,17 @@ export function ClipboardIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   )
 }
+
+export function LoginIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M8 5.25H5.75A1.75 1.75 0 0 0 4 7v6a1.75 1.75 0 0 0 1.75 1.75H8M10.5 6.5 14 10m0 0-3.5 3.5M14 10H7"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.8"
+      />
+    </svg>
+  )
+}

@@ -6,6 +6,9 @@ interface AuthCardBanner {
   tablet: string
   mobile: string
   alt: string
+  className?: string
+  objectPosition?: string
+  showLogo?: boolean
 }
 
 interface AuthCardProps {
@@ -28,30 +31,49 @@ export function AuthCard({
   return (
     <section
       className={classNames(
-        'relative w-full max-w-[1120px] overflow-hidden rounded-[28px] border border-white/6 bg-[#1b2022] shadow-[0_30px_90px_rgba(0,0,0,0.55)]',
+        'relative w-full max-w-[328px] overflow-hidden rounded-[16px] border border-[#00090e] bg-[#171d1f] shadow-[0_30px_90px_rgba(0,0,0,0.55)] sm:max-w-[600px] lg:max-w-[996px] lg:rounded-[32px] lg:px-[78px] lg:py-14',
         className,
       )}
     >
-      <div className="grid lg:grid-cols-[407px_minmax(0,1fr)]">
-        <div className="relative aspect-[296/360] overflow-hidden bg-black sm:aspect-[528/415] lg:h-full lg:aspect-auto">
+      <div className="grid gap-8 p-4 sm:p-8 lg:grid-cols-[407px_410px] lg:justify-between lg:gap-0 lg:p-0">
+        <div
+          className={classNames(
+            'relative aspect-[296/360] overflow-hidden bg-black sm:aspect-[528/415] lg:h-full lg:aspect-auto',
+            banner.className,
+          )}
+        >
           <picture className="absolute inset-0 block">
             <source media="(max-width: 767px)" srcSet={banner.mobile} />
             <source media="(max-width: 1023px)" srcSet={banner.tablet} />
             <img
               alt={banner.alt}
               className="h-full w-full object-cover"
+              style={{ objectPosition: banner.objectPosition }}
               src={banner.desktop}
             />
           </picture>
+          {banner.showLogo && (
+            <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 text-white sm:bottom-8">
+              <span className="relative h-8 w-8 text-[#81fe88]" aria-hidden="true">
+                <span className="absolute left-0 top-2 h-4 w-4 rounded-[5px] border-[3px] border-current" />
+                <span className="absolute right-0 top-0 h-4 w-4 rounded-[5px] border-[3px] border-current" />
+              </span>
+              <span className="text-[1.05rem] font-semibold leading-[0.88] tracking-normal">
+                code
+                <br />
+                connect
+              </span>
+            </div>
+          )}
         </div>
 
-        <div className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12">
-          <div className="max-w-[448px] space-y-8">
-            <header className="space-y-8">
-              <h1 className="text-[2.1rem] font-semibold leading-none tracking-[-0.03em] text-white sm:text-[2.3rem]">
+        <div className="flex flex-col justify-center">
+          <div className="space-y-8">
+            <header className="space-y-6">
+              <h1 className="text-[1.625rem] font-semibold leading-[1.5] tracking-normal text-[#e1e1e1] sm:text-[1.9375rem]">
                 {title}
               </h1>
-              <p className="text-[1.22rem] leading-[1.45] text-white/88">
+              <p className="text-[1.375rem] leading-[1.5] text-[#e1e1e1]">
                 {subtitle}
               </p>
             </header>

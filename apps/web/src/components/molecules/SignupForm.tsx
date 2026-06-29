@@ -5,7 +5,7 @@ import { ArrowRightIcon } from '../atoms/icons'
 import { AuthDivider } from './AuthDivider'
 import { SocialAuthButton } from '../atoms/SocialAuthButton'
 
-export function LoginForm() {
+export function SignupForm() {
   return (
     <form
       className="space-y-6"
@@ -13,22 +13,32 @@ export function LoginForm() {
         event.preventDefault()
       }}
     >
-      <TextField
-        autoComplete="username"
-        label="Email ou usuário"
-        name="identifier"
-        placeholder="usuario123"
-      />
+      <div className="space-y-4">
+        <TextField
+          autoComplete="name"
+          label="Nome"
+          name="name"
+          placeholder="Nome completo"
+        />
 
-      <TextField
-        autoComplete="current-password"
-        label="Senha"
-        name="password"
-        placeholder="******"
-        type="password"
-      />
+        <TextField
+          autoComplete="email"
+          label="Email"
+          name="email"
+          placeholder="Digite seu email"
+          type="email"
+        />
 
-      <Checkbox defaultChecked label="Lembrar-me" name="remember" />
+        <TextField
+          autoComplete="new-password"
+          label="Senha"
+          name="password"
+          placeholder="******"
+          type="password"
+        />
+
+        <Checkbox defaultChecked label="Lembrar-me" name="remember" />
+      </div>
 
       <Button
         endIcon={<ArrowRightIcon className="h-4 w-4" />}
@@ -36,7 +46,7 @@ export function LoginForm() {
         type="submit"
         variant="primary"
       >
-        Login
+        Cadastrar
       </Button>
 
       <AuthDivider>ou entre com outras contas</AuthDivider>

@@ -17,14 +17,14 @@ export function SocialAuthButton({
   return (
     <button
       className={classNames(
-        'flex min-h-[86px] flex-col items-center justify-center gap-2 rounded-[16px] border border-white/8 bg-white/4 px-4 py-3 text-white/85 transition hover:border-white/18 hover:bg-white/7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7fff84]',
+        'flex flex-col items-center justify-center gap-1 text-[#e1e1e1] transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#81fe88]',
         className,
       )}
       type="button"
       {...props}
     >
-      <img alt={iconAlt} className="h-7 w-7 object-contain" src={iconSrc} />
-      <span className="text-xs font-medium">{label}</span>
+      <img alt={iconAlt} className="h-8 w-8 object-contain" src={iconSrc} />
+      <span className="text-[0.78125rem] leading-[1.5]">{label}</span>
     </button>
   )
 }
