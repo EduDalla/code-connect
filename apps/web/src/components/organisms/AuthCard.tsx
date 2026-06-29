@@ -31,7 +31,7 @@ export function AuthCard({
   return (
     <section
       className={classNames(
-        'relative w-full max-w-[328px] overflow-hidden rounded-[16px] border border-[#00090e] bg-[#171d1f] shadow-[0_30px_90px_rgba(0,0,0,0.55)] sm:max-w-[600px] lg:max-w-[996px] lg:rounded-[32px] lg:px-[78px] lg:py-14',
+        'relative w-full max-w-[328px] overflow-hidden rounded-[16px] border border-code-graphite bg-code-surface shadow-[0_30px_90px_rgba(0,0,0,0.55)] sm:max-w-[600px] lg:max-w-[996px] lg:rounded-[32px] lg:px-[78px] lg:py-14',
         className,
       )}
     >
@@ -54,11 +54,11 @@ export function AuthCard({
           </picture>
           {banner.showLogo && (
             <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 text-white sm:bottom-8">
-              <span className="relative h-8 w-8 text-[#81fe88]" aria-hidden="true">
+              <span className="relative h-8 w-8 text-code-highlight" aria-hidden="true">
                 <span className="absolute left-0 top-2 h-4 w-4 rounded-[5px] border-[3px] border-current" />
                 <span className="absolute right-0 top-0 h-4 w-4 rounded-[5px] border-[3px] border-current" />
               </span>
-              <span className="text-[1.05rem] font-semibold leading-[0.88] tracking-normal">
+              <span className="text-base font-semibold leading-none tracking-normal">
                 code
                 <br />
                 connect
@@ -70,10 +70,10 @@ export function AuthCard({
         <div className="flex flex-col justify-center">
           <div className="space-y-8">
             <header className="space-y-6">
-              <h1 className="text-[1.625rem] font-semibold leading-[1.5] tracking-normal text-[#e1e1e1] sm:text-[1.9375rem]">
+              <h1 className="text-2xl font-semibold leading-normal tracking-normal text-code-offwhite sm:text-3xl">
                 {title}
               </h1>
-              <p className="text-[1.375rem] leading-[1.5] text-[#e1e1e1]">
+              <p className="text-xl leading-normal text-code-offwhite">
                 {subtitle}
               </p>
             </header>

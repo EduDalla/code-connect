@@ -15,10 +15,19 @@ export function AuthRedirectLink({
 }: AuthRedirectLinkProps) {
   return (
     <div className="flex flex-col items-start gap-1 text-left sm:flex-row sm:items-center sm:gap-2">
-      <p className="text-[1.125rem] leading-[1.5] text-[#e1e1e1]">{prompt}</p>
+      <p className="text-lg leading-normal text-code-offwhite">{prompt}</p>
       <a
-        className="inline-flex items-center gap-3 text-[1.125rem] font-normal leading-[1.5] text-[#81fe88] transition hover:text-[#9bff9f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#81fe88]"
+        className="inline-flex items-center gap-3 text-lg font-normal leading-normal text-code-highlight transition hover:text-code-highlight-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-code-highlight"
         href={href}
+        onClick={(event) => {
+          if (!href.startsWith('/')) {
+            return
+          }
+
+          event.preventDefault()
+          window.history.pushState(null, '', href)
+          window.dispatchEvent(new PopStateEvent('popstate'))
+        }}
       >
         <span>{action}</span>
         {icon}

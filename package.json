@@ -9,6 +9,7 @@
     "web:dev": "./pnpm -C apps/web dev",
     "web:build": "./pnpm -C apps/web build",
     "web:lint": "./pnpm -C apps/web lint",
+    "web:test:a11y": "./pnpm -C apps/web test:a11y",
     "web:preview": "./pnpm -C apps/web preview",
     "api:dev": "./pnpm -C apps/api start:dev",
     "api:build": "./pnpm -C apps/api build",

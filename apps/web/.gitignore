@@ -4,6 +4,8 @@ dist/
 dist-ssr/
 .vite/
 coverage/
+playwright-report/
+test-results/
 *.tsbuildinfo
 
 # Local environment files

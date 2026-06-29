@@ -20,7 +20,7 @@ export function LoginPage() {
         footer={
           <AuthRedirectLink
             action="Crie seu cadastro!"
-            href="#cadastro"
+            href="/cadastro"
             icon={<ClipboardIcon className="h-4 w-4" />}
             prompt="Ainda não tem conta?"
           />

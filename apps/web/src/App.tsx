@@ -3,21 +3,25 @@ import { LoginPage } from './components/pages/LoginPage'
 import { SignupPage } from './components/pages/SignupPage'
 
 function App() {
-  const [hash, setHash] = useState(window.location.hash)
+  const [pathname, setPathname] = useState(window.location.pathname)
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setHash(window.location.hash)
+    const handleLocationChange = () => {
+      setPathname(window.location.pathname)
     }
 
-    window.addEventListener('hashchange', handleHashChange)
+    window.addEventListener('popstate', handleLocationChange)
 
     return () => {
-      window.removeEventListener('hashchange', handleHashChange)
+      window.removeEventListener('popstate', handleLocationChange)
     }
   }, [])
 
-  return hash === '#login' ? <LoginPage /> : <SignupPage />
+  if (pathname === '/login') {
+    return <LoginPage />
+  }
+
+  return <SignupPage />
 }
 
 export default App

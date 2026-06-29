@@ -22,7 +22,7 @@ export function SignupPage() {
         footer={
           <AuthRedirectLink
             action="Faça seu login!"
-            href="#login"
+            href="/login"
             icon={<LoginIcon className="h-4 w-4" />}
             prompt="Já tem conta?"
           />
