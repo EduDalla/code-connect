@@ -11,6 +11,11 @@ interface UserResponseBody {
   createdAt: string;
 }
 
+interface LoginResponseBody {
+  accessToken: string;
+  user: UserResponseBody;
+}
+
 describe('Auth and users endpoints (e2e)', () => {
   let app: INestApplication<App>;
 
@@ -66,6 +71,55 @@ describe('Auth and users endpoints (e2e)', () => {
       .post('/auth/register')
       .send(payload)
       .expect(409);
+  });
+
+  it('logs in with valid credentials', async () => {
+    await request(app.getHttpServer())
+      .post('/auth/register')
+      .send({
+        name: 'Ada Lovelace',
+        email: 'ada@example.com',
+        password: 'secure-password',
+      })
+      .expect(201);
+
+    const response = await request(app.getHttpServer())
+      .post('/auth/login')
+      .send({
+        email: 'ada@example.com',
+        password: 'secure-password',
+      })
+      .expect(200);
+    const body = response.body as unknown as LoginResponseBody;
+
+    expect(body).toMatchObject({
+      user: {
+        name: 'Ada Lovelace',
+        email: 'ada@example.com',
+      },
+    });
+    expect(typeof body.accessToken).toBe('string');
+    expect(typeof body.user.id).toBe('string');
+    expect(typeof body.user.createdAt).toBe('string');
+  });
+
+  it('rejects login with an invalid password', async () => {
+    await request(app.getHttpServer())
+      .post('/auth/register')
+      .send({
+        name: 'Ada Lovelace',
+        email: 'ada@example.com',
+        password: 'secure-password',
+      })
+      .expect(201);
+
+    await request(app.getHttpServer())
+      .post('/auth/login')
+      .send({
+        email: 'ada@example.com',
+        password: 'wrong-password',
+      })
+      .expect(401);
   });
 
   afterEach(async () => {
